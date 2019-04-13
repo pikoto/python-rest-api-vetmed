@@ -1,0 +1,79 @@
+#role_add
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Lekarz5", "description" : "Weterynarz5", "created_by" : "HTTP post request", "is_team" : "1" }' http://0.0.0.0:5000/api/role
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Stażysta", "description" : "Stażysta", "created_by" : "HTTP post request", "is_team" : "1" }' http://0.0.0.0:5000/api/role
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Klient", "description" : "Klient", "created_by" : "HTTP post request", "is_team" : "0" }' http://0.0.0.0:5000/api/role
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Pacjent", "description" : "Pacjent", "created_by" : "HTTP post request", "is_team" : "0" }' http://0.0.0.0:5000/api/role
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Właściciel", "description" : "Lekarz", "created_by" : "HTTP post request", "is_team" : "1" }' http://0.0.0.0:5000/api/role
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Praktykant", "description" : "praktykant", "created_by" : "HTTP post request", "is_team" : "1" }' http://0.0.0.0:5000/api/role
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "name" : "Właściciel", "description" : "praktykant", "created_by" : "HTTP post request", "is_team" : "1" }' http://0.0.0.0:5000/api/role
+
+
+#role_update
+curl -X POST -H 'Content-Type: application/json' -d '{ "id" : "1", "name" : "Lekarz", "description" : "Weterynarz", "update_by" : "test", "is_team" : "1" }' http://0.0.0.0:5000/api/role_update
+
+
+#role_del
+curl -X POST -H 'Content-Type: application/json' -d '{ "id_del": "6", "deleted_by" : "HTTP post request", "deleted_by" : "test"
+}' http://0.0.0.0:5000/api/role_update_del
+
+#user_add
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Wet", "password" : "Wet", "first_name" : "Jan", "last_name" : "Kowalski", "science_degree" : "doc.", "role_id" : "1"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Wet2", "password" : "Wet2", "first_name" : "Karol", "last_name" : "Nowak", "science_degree" : "doc.", "role_id" : "1"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Wet3", "password" : "Wet3", "first_name" : "Anna", "last_name" : "Nowak", "science_degree" : "doc.", "role_id" : "1"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Wet4", "password" : "Wet4", "first_name" : "Monika", "last_name" : "Wiśniewska", "science_degree" : "doc.", "role_id" : "1"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Stażysta", "password" : "Wet4", "first_name" : "Adam", "last_name" : "Wójcik", "science_degree" : "doc.", "role_id" : "2"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Stażysta1", "password" : "Wet4", "first_name" : "Gosia", "last_name" : "Król", "science_degree" : "doc.", "role_id" : "2"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Stażysta2", "password" : "Wet4", "first_name" : "Ewa", "last_name" : "Kowalczyk", "science_degree" : "doc.", "role_id" : "2"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Adam", "password" : "Wet4", "first_name" : "Adam", "last_name" : "Adam", "science_degree" : "doc.", "role_id" : "3"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Fafik", "password" : "Fafik", "first_name" : "Fafik", "last_name" : "Adam", "science_degree" : "doc.", "role_id" : "3"
+}' http://0.0.0.0:5000/api/user
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Fifi", "password" : "Fifi", "first_name" : "Fifi", "last_name" : "Fifi", "science_degree" : "doc.", "role_id" : "4"
+}' http://0.0.0.0:5000/api/user
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Fifi", "password" : "Fifi", "first_name" : "Fifi", "last_name" : "Fifi", "science_degree" : "doc.", "role_id" : "9"
+}' http://0.0.0.0:5000/api/user
+
+
+#user_logon
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Wet2", "password" : "Wet2" }' http://0.0.0.0:5000/api/user_check_password
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "login" : "Wet2", "password" : "Wet" }' http://0.0.0.0:5000/api/user_check_password
+
+
+#user_update
+curl -X POST -H 'Content-Type: application/json' -d '{ "id" : "11", "first_name" : "Fifi2", "last_name" : "Fifi2", "science_degree" : "doc.", "update_by" : "post request", "role_id" : "2"
+}' http://0.0.0.0:5000/api/user_update
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "id" : "111", "first_name" : "Fifi2", "last_name" : "Fifi2", "science_degree" : "doc.", "update_by" : "post request", "role_id" : "2"
+}' http://0.0.0.0:5000/api/user_update
+
+#user_del
+curl -X POST -H 'Content-Type: application/json' -d '{ "id_del": "11", "deleted_by" : "HTTP post request", "deleted_by" : "test"
+}' http://0.0.0.0:5000/api/user_update_del
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "id_del": "11", "deleted_by" : "HTTP post request", "deleted_by" : "test"
+}' http://0.0.0.0:5000/api/user_update_del
+
+#user_info_add
+curl -X POST -H 'Content-Type: application/json' -d '{ "description" : "description", "description2" : "description2", "user_id" : "1"
+}' http://0.0.0.0:5000/api/user_info
+curl -X POST -H 'Content-Type: application/json' -d '{ "description" : "description", "description2" : "description2", "user_id" : "2"
+}' http://0.0.0.0:5000/api/user_info
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "description" : "description", "description2" : "description2", "user_id" : "1"
+}' http://0.0.0.0:5000/api/user_info
+
+#user_info_update
+curl -X POST -H 'Content-Type: application/json' -d '{ "id" : "1", "description" : "description-test", "description2" : "description2-test", "update_by" : "test"}' http://0.0.0.0:5000/api/user_info_update
+#false
+curl -X POST -H 'Content-Type: application/json' -d '{ "id" : "111", "description" : "description-test", "description2" : "description2-test", "update_by" : "test"}' http://0.0.0.0:5000/api/user_info_update
+
